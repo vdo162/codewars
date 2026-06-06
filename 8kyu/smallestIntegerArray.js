@@ -1,17 +1,20 @@
 // ❓ DESCRIPTION
-// Given an array of integers as strings and numbers, return the sum of the array values as if all were numbers.
-// Return your answer as a number.
+// Given an array of integers your solution should find the smallest integer
 
 // 🔵 TEST
-//     assert.strictEqual(sumMix([9, 3, '7', '3']), 22);
-//     assert.strictEqual(sumMix(['5', '0', 9, 3, 2, 1, '9', 6, 7]), 42);
-//     assert.strictEqual(sumMix(['3', 6, 6, 0, '5', 8, 5, '6', 2,'0']), 41);
+//     assert.strictEqual(findSmallestInt([78,56,232,12,8]),8, `findSmallestInt([78,56,232,12,8])`);
+//     assert.strictEqual(findSmallestInt([78,56,232,12,18]),12, `findSmallestInt([78,56,232,12,18])`);
+//     assert.strictEqual(findSmallestInt([78,56,232,412,228]),56, `findSmallestInt([78,56,232,412,228])`);
+//     assert.strictEqual(findSmallestInt([78,56,232,12,0]),0, `findSmallestInt([78,56,232,12,0])`);
+//     assert.strictEqual(findSmallestInt([1,56,232,12,8]),1, `findSmallestInt([1,56,232,12,8])`);
 
 // ✅ SOLUTION
-function sumMix(arr){
-    let sum = 0
-    for (let i = 0; i < arr.length; i++) {
-        sum += +(arr[i])
+function findSmallestInt(arr) {
+    let smallestInt = arr[0]
+    for (const arrElement of arr) {
+        if(smallestInt > arrElement) {
+            smallestInt = arrElement
+        }
     }
-    return sum
+    return smallestInt;
 }
